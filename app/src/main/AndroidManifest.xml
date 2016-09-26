@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TweenAnimationActivity"/>
+        <activity android:name=".FrameAnimationActivity"/>
     </application>
 
 </manifest>

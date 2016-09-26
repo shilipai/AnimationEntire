@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.lxs.animationtest.MainActivity"
-    android:orientation="vertical">
+    tools:context="com.lxs.animationtest.MainActivity">
 
     <Button
         android:id="@+id/animation_tween"
-        android:text="补间动画"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="补间动画"/>
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/animation_frame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="帧动画"/>
+
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"

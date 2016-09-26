@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 /**
- * 实现功能：
+ * 实现功能：帧动画
  * <p/>
  * Created by lxs on 2016/9/26 16:41.
  * 修 改 者：修改日期：修改内容：

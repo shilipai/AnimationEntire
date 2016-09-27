@@ -25,7 +25,7 @@ tvAnimationFrame.setBackgroundResource(R.drawable.frame);// Why 1?
 anim = (AnimationDrawable) tvAnimationFrame.getBackground();//Why 2?
 ```
 
- 1. getResources().getDrawable()不推荐使用了（Deprecated）-->用ContextCompat.getDrawable(this, R.drawable.frame);代替。具体查看：[getDrawable()过时用何代替](%E6%9F%A5%E7%9C%8B%EF%BC%9Ahttp://stackoverflow.com/questions/29041027/android-getresources-getdrawable-deprecated-api-22)
+ 1. getResources().getDrawable()不推荐使用了（Deprecated）-->用ContextCompat.getDrawable(this, R.drawable.frame);代替。具体查看：[getDrawable()过时用何代替](http://stackoverflow.com/questions/29041027/android-getresources-getdrawable-deprecated-api-22)
  2. setBackgroundDrawable(anim)同样过时-->用tvAnimationFrame.setBackgroundResource(R.drawable.frame);代替。具体查看：[setBackgroundDrawable()过时用何代替](http://www.lai18.com/content/666597.html)
 
 > 旅行社（lxs）说：

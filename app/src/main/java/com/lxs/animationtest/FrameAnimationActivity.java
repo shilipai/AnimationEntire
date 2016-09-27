@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 /**
- * 实现功能：
+ * 实现功能：利用AnimationDrawable实现动画时，本身并没有提供接口来监听动画的状态（开始，结束），需要自己处理。
  * <p/>
  * Created by lxs on 2016/9/26 16:41.
  * 修 改 者：修改日期：修改内容：

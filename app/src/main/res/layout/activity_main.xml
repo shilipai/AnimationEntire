@@ -24,8 +24,9 @@
         android:text="帧动画"/>
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/animation_property"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="属性动画"/>
 
 </LinearLayout>

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button animationTween, animationFrame,animationProperty;
+    private Button animationTween, animationFrame,animationProperty,animationLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animationTween = (Button) findViewById(R.id.animation_tween);
         animationFrame = (Button) findViewById(R.id.animation_frame);
         animationProperty = (Button) findViewById(R.id.animation_property);
+        animationLayout = (Button) findViewById(R.id.animation_layout);
         animationTween.setOnClickListener(this);
         animationFrame.setOnClickListener(this);
         animationProperty.setOnClickListener(this);
+        animationLayout.setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.animation_property:
                 startActivity(new Intent(this, PropertyAnimationActivity.class));
+                break;
+            case R.id.animation_layout:
+                startActivity(new Intent(this, LayoutAnimationActivity.class));
                 break;
         }
 

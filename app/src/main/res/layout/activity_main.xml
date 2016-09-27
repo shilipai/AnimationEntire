@@ -29,4 +29,11 @@
         android:layout_height="wrap_content"
         android:text="属性动画"/>
 
+    <Button
+        android:id="@+id/animation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewGroup子元素出场动画LayoutAnimation"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

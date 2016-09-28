@@ -20,6 +20,7 @@
         <activity android:name=".PropertyAnimationActivity"/>
         <activity android:name=".LayoutAnimationActivity"/>
         <activity android:name=".ActivitySwitchAnimActivity"/>
+        <activity android:name=".LayoutAnimationJavaActivity"/>
     </application>
 
 </manifest>

@@ -15,32 +15,38 @@
         android:id="@+id/animation_tween"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="补间动画"/>
+        android:text="@string/tween_anim"/>
 
     <Button
         android:id="@+id/animation_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="帧动画"/>
+        android:text="@string/frame_anim"/>
 
     <Button
         android:id="@+id/animation_property"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="属性动画"/>
+        android:text="@string/property_anim"/>
 
     <Button
         android:id="@+id/animation_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewGroup子元素出场动画LayoutAnimation"
+        android:text="@string/layout_animation"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/animation_layout_java"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/layout_animation_java"
         android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/animation_activity_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Activity切换效果"
+        android:text="@string/activity_switch"
         android:textAllCaps="false"/>
 
 </LinearLayout>

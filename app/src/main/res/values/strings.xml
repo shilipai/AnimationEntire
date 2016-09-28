@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AnimationTest</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="tween_anim">补间动画</string>
+    <string name="frame_anim">帧动画</string>
+    <string name="property_anim">属性动画</string>
+    <string name="layout_animation">ViewGroup子元素出场动画LayoutAnimation</string>
+    <string name="layout_animation_java">ViewGroup子元素出场动画Java实现</string>
+    <string name="activity_switch">Activity切换效果</string>
 </resources>

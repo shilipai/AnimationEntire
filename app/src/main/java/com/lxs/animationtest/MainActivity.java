@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button animationTween, animationFrame,animationProperty,animationLayout;
+    private Button animationTween, animationFrame, animationProperty, animationLayout, animationActivitySwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animationFrame = (Button) findViewById(R.id.animation_frame);
         animationProperty = (Button) findViewById(R.id.animation_property);
         animationLayout = (Button) findViewById(R.id.animation_layout);
+        animationActivitySwitch = (Button) findViewById(R.id.animation_activity_switch);
         animationTween.setOnClickListener(this);
         animationFrame.setOnClickListener(this);
         animationProperty.setOnClickListener(this);
         animationLayout.setOnClickListener(this);
+        animationActivitySwitch.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.animation_layout:
                 startActivity(new Intent(this, LayoutAnimationActivity.class));
+                break;
+            case R.id.animation_activity_switch:
+                startActivity(new Intent(this, ActivitySwitchAnimActivity.class));
+                overridePendingTransition(R.anim.enter_anim, 0);
                 break;
         }
 

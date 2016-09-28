@@ -36,4 +36,11 @@
         android:text="ViewGroup子元素出场动画LayoutAnimation"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/animation_activity_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity切换效果"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

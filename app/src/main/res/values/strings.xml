@@ -10,4 +10,5 @@
     <string name="layout_animation">ViewGroup子元素出场动画LayoutAnimation</string>
     <string name="layout_animation_java">ViewGroup子元素出场动画Java实现</string>
     <string name="activity_switch">Activity切换效果</string>
+    <string name="view_anim_user_defined">自定义View动画</string>
 </resources>

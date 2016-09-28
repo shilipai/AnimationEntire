@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button animationTween, animationFrame, animationProperty, animationLayout,animationLayoutJava, animationActivitySwitch;
+    private Button animationTween, animationFrame, animationProperty, animationLayout,animationLayoutJava, animationActivitySwitch,animationUserDefined;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animationLayout = (Button) findViewById(R.id.animation_layout);
         animationLayoutJava = (Button) findViewById(R.id.animation_layout_java);
         animationActivitySwitch = (Button) findViewById(R.id.animation_activity_switch);
+        animationUserDefined = (Button) findViewById(R.id.animation_user_defined);
         animationTween.setOnClickListener(this);
         animationFrame.setOnClickListener(this);
         animationProperty.setOnClickListener(this);
         animationLayout.setOnClickListener(this);
         animationActivitySwitch.setOnClickListener(this);
         animationLayoutJava.setOnClickListener(this);
+        animationUserDefined.setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.animation_activity_switch:
                 startActivity(new Intent(this, ActivitySwitchAnimActivity.class));
                 overridePendingTransition(R.anim.enter_anim, 0);
+                break;
+            case R.id.animation_user_defined:
+                startActivity(new Intent(this, ViewAnimationUserDefinedActivity.class));
                 break;
         }
 

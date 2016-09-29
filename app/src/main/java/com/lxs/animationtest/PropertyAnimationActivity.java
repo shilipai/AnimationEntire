@@ -18,7 +18,7 @@ import android.widget.Button;
  * 修 改 者：修改日期：修改内容：
  */
 public class PropertyAnimationActivity extends AppCompatActivity implements View.OnClickListener {
-    Button property_anim_performer, btnTranslationY, btnBackgroundColor, btnPropertyAnimSet, btnPropertyAnimXml;
+    Button property_anim_performer, btnTranslationY, btnBackgroundColor, btnPropertyAnimSet, btnPropertyAnimXml, btnWidthIncrease;
     private ValueAnimator animator;
 
     @Override
@@ -30,10 +30,12 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
         btnBackgroundColor = (Button) findViewById(R.id.btn_background_color);
         btnPropertyAnimSet = (Button) findViewById(R.id.btn_property_anim_set);
         btnPropertyAnimXml = (Button) findViewById(R.id.btn_property_anim_xml);
+        btnWidthIncrease = (Button) findViewById(R.id.btn_width_increase);
         btnTranslationY.setOnClickListener(this);
         btnBackgroundColor.setOnClickListener(this);
         btnPropertyAnimSet.setOnClickListener(this);
         btnPropertyAnimXml.setOnClickListener(this);
+        btnWidthIncrease.setOnClickListener(this);
 
     }
 
@@ -53,6 +55,8 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
                 break;
             case R.id.btn_property_anim_xml:
                 propertyAnimXml();
+                break;
+            case R.id.btn_width_increase:
                 break;
         }
 

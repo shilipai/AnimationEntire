@@ -36,6 +36,12 @@
             android:layout_height="wrap_content"
             android:text="属性动画xml实现"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_width_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="增加Button宽度"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

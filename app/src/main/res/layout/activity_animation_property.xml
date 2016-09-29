@@ -30,6 +30,13 @@
             android:text="属性动画集合"
             android:textAllCaps="false"/>
 
+        <Button
+            android:id="@+id/btn_property_anim_xml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画xml实现"
+            android:textAllCaps="false"/>
+
     </LinearLayout>
 
     <Button

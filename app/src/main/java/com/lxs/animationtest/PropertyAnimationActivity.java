@@ -1,5 +1,6 @@
 package com.lxs.animationtest;
 
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
@@ -17,7 +18,7 @@ import android.widget.Button;
  * 修 改 者：修改日期：修改内容：
  */
 public class PropertyAnimationActivity extends AppCompatActivity implements View.OnClickListener {
-    Button property_anim_performer, btnTranslationY, btnBackgroundColor, btnPropertyAnimSet;
+    Button property_anim_performer, btnTranslationY, btnBackgroundColor, btnPropertyAnimSet, btnPropertyAnimXml;
     private ValueAnimator animator;
 
     @Override
@@ -28,9 +29,11 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
         btnTranslationY = (Button) findViewById(R.id.btn_translationY);
         btnBackgroundColor = (Button) findViewById(R.id.btn_background_color);
         btnPropertyAnimSet = (Button) findViewById(R.id.btn_property_anim_set);
+        btnPropertyAnimXml = (Button) findViewById(R.id.btn_property_anim_xml);
         btnTranslationY.setOnClickListener(this);
         btnBackgroundColor.setOnClickListener(this);
         btnPropertyAnimSet.setOnClickListener(this);
+        btnPropertyAnimXml.setOnClickListener(this);
 
     }
 
@@ -47,6 +50,9 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
                 break;
             case R.id.btn_property_anim_set:
                 propertyAnimSet();
+                break;
+            case R.id.btn_property_anim_xml:
+                propertyAnimXml();
                 break;
         }
 
@@ -78,4 +84,9 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
         set.setDuration(5000).start();
     }
 
+    private void propertyAnimXml() {
+        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.property_animator);
+        set.setTarget(property_anim_performer);
+        set.start();
+    }
 }

@@ -18,14 +18,14 @@ import android.widget.Button;
  * 修 改 者：修改日期：修改内容：
  */
 public class PropertyAnimationActivity extends AppCompatActivity implements View.OnClickListener {
-    Button property_anim_performer, btnTranslationY, btnBackgroundColor, btnPropertyAnimSet, btnPropertyAnimXml, btnWidthIncrease;
+    Button propertyAnimPerformer, btnTranslationY, btnBackgroundColor, btnPropertyAnimSet, btnPropertyAnimXml, btnWidthIncrease;
     private ValueAnimator animator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation_property);
-        property_anim_performer = (Button) findViewById(R.id.property_anim_performer);
+        propertyAnimPerformer = (Button) findViewById(R.id.property_anim_performer);
         btnTranslationY = (Button) findViewById(R.id.btn_translationY);
         btnBackgroundColor = (Button) findViewById(R.id.btn_background_color);
         btnPropertyAnimSet = (Button) findViewById(R.id.btn_property_anim_set);
@@ -43,12 +43,12 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_translationY:
-                animator = ObjectAnimator.ofFloat(property_anim_performer, "translationY", btnTranslationY.getHeight());
+                animator = ObjectAnimator.ofFloat(propertyAnimPerformer, "translationY", btnTranslationY.getHeight());
                 animator.start();
                 break;
 
             case R.id.btn_background_color:
-                propertyAnimBgcolor();
+                propertyAnimBgColor();
                 break;
             case R.id.btn_property_anim_set:
                 propertyAnimSet();
@@ -57,14 +57,20 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
                 propertyAnimXml();
                 break;
             case R.id.btn_width_increase:
+                propertyAnimIncreaseWidth();
                 break;
         }
 
     }
 
+    private void propertyAnimIncreaseWidth() {
+        ViewWrapper wrapper = new ViewWrapper(propertyAnimPerformer);
+        ObjectAnimator.ofInt(wrapper, "width", 500).setDuration(5000).start();
+    }
 
-    private void propertyAnimBgcolor() {
-        animator = ObjectAnimator.ofInt(property_anim_performer, "backgroundColor", 0xFFFF0000, 0xFF0000FF);
+
+    private void propertyAnimBgColor() {
+        animator = ObjectAnimator.ofInt(propertyAnimPerformer, "backgroundColor", 0xFFFF0000, 0xFF0000FF);
         animator.setDuration(3000);
         animator.setEvaluator(new ArgbEvaluator());
         animator.setRepeatCount(ValueAnimator.INFINITE);
@@ -76,21 +82,38 @@ public class PropertyAnimationActivity extends AppCompatActivity implements View
     private void propertyAnimSet() {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(
-                ObjectAnimator.ofFloat(property_anim_performer, "rotationX", 0, 360),
-                ObjectAnimator.ofFloat(property_anim_performer, "rotationY", 0, 180),
-                ObjectAnimator.ofFloat(property_anim_performer, "rotation", 0, -90),
-                ObjectAnimator.ofFloat(property_anim_performer, "translationX", 0, 90),
-                ObjectAnimator.ofFloat(property_anim_performer, "translationY", 0, 90),
-                ObjectAnimator.ofFloat(property_anim_performer, "scaleX", 1, 1.5f),
-                ObjectAnimator.ofFloat(property_anim_performer, "scaleY", 1, 0.5f),
-                ObjectAnimator.ofFloat(property_anim_performer, "alpha", 1, 0.25f, 1)
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "rotationX", 0, 360),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "rotationY", 0, 180),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "rotation", 0, -90),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "translationX", 0, 90),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "translationY", 0, 90),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "scaleX", 1, 1.5f),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "scaleY", 1, 0.5f),
+                ObjectAnimator.ofFloat(propertyAnimPerformer, "alpha", 1, 0.25f, 1)
         );
         set.setDuration(5000).start();
     }
 
     private void propertyAnimXml() {
         AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.property_animator);
-        set.setTarget(property_anim_performer);
+        set.setTarget(propertyAnimPerformer);
         set.start();
+    }
+
+    private static class ViewWrapper {
+        private View mTarget;
+
+        public ViewWrapper(View target) {
+            mTarget = target;
+        }
+
+        public int getWidth() {
+            return mTarget.getLayoutParams().width;
+        }
+
+        public void setWidth(int width) {
+            mTarget.getLayoutParams().width = width;
+            mTarget.requestLayout();
+        }
     }
 }

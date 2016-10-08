@@ -34,7 +34,9 @@ public class ViewAnimationUserDefinedActivity extends AppCompatActivity {
                 float centerX = rLayout.getWidth() / 2f;
                 float centerY = rLayout.getHeight() / 2f;
 
-                Log.e("------", centerX + "," + centerY + "," + Rotate3d.getTop() + "," + Rotate3d.getHeight() + "," + Rotate3d.getBottom() + "," + getResources().getDisplayMetrics().heightPixels);
+                Log.e("------", "centerX:" + centerX + ",centerY:" + centerY + ",Rotate3d.getTop()" + Rotate3d.getTop() +
+                        ",Rotate3d.getHeight()" + Rotate3d.getHeight() + ",Rotate3d.getBottom():" + Rotate3d.getBottom() +
+                        ",getResources().getDisplayMetrics().heightPixels:" + getResources().getDisplayMetrics().heightPixels);
                 mAnimation = new Rotate3dAnimation(0, 360, centerX, centerY, 0, false);
                 mAnimation.setDuration(3000);
                 mAnimation.setInterpolator(new AccelerateInterpolator());
